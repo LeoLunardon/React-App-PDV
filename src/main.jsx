@@ -12,26 +12,34 @@ import LastSales from "./pages/lastSales.jsx";
 
 import DashboardPage from "./pages/dashboardPage.jsx";
 
+const paths = {
+  "/": HomePage,
+  "/products": ProductsPage,
+  "/sale": SalePage,
+  "/sales-history": LastSales,
+  "/dashboard": DashboardPage,
+}
+
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: paths["/"],
 
     element: <HomePage />,
   },
   {
-    path: "/products",
+    path: paths["/products"],
     element: <ProductsPage />,
   },
   {
-    path: "/sale",
+    path: paths["/sale"],
     element: <SalePage />,
   },
   {
-    path: "/sales-history",
+    path: paths["/sales-history"],
     element: <LastSales />,
   },
   {
-    path: "/dashboard",
+    path: paths["/dashboard"],
     element: <DashboardPage />,
   },
 ]);
@@ -39,5 +47,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router}></RouterProvider>
+
   </React.StrictMode>
 );
