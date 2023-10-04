@@ -3,9 +3,6 @@ import Chart from "react-apexcharts";
 import SideBar from "../components/SideBar/SideBar";
 import BoxItems from "../components/Dashboard/BoxItems";
 import UrlServer from "../Services/UrlServer";
-import getToken from "../Services/tokenService";
-import axios from "axios";
-
 
 const DashboardPage = () => {
   const [salesData, setSalesData] = useState([]);
@@ -13,8 +10,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchSalesData = async () => {
       try {
-        
-        const response = await axios.get(`${UrlServer}/sales-history`);
+        const response = await fetch(`${UrlServer}/sales-history`);
         const data = await response.json();
 
         const productSales = {};
@@ -75,9 +71,7 @@ const DashboardPage = () => {
       </div>
       <div className="flex ml-80">
         {salesData && salesData.options && salesData.series ? (
-          <div
-            className="max-w-96 overflow-x-auto mt-10"
-          >
+          <div className="max-w-96 overflow-x-auto mt-10">
             <Chart
               options={salesData.options}
               series={[{ data: salesData.series }]}
