@@ -14,7 +14,11 @@ import DashboardPage from "./pages/dashboardPage.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/home",
     element: <HomePage />,
   },
   {
@@ -30,13 +34,9 @@ const router = createBrowserRouter([
     element: <LastSales />,
   },
   {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
     path: "/dashboard",
     element: <DashboardPage />,
-  }
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
