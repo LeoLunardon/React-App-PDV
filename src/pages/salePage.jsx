@@ -5,9 +5,7 @@ import getToken from "../Services/tokenService";
 import { useEffect } from "react";
 
 const SalePage = () => {
-  useEffect(() => {
-    const token = getToken();
-  });
+
   return (
     <div className="flex">
       <SideBar />

@@ -5,9 +5,6 @@ import getToken from "../Services/tokenService";
 import { useEffect } from "react";
 
 const LastSales = () => {
-  useEffect(() => {
-    const token = getToken();
-  }, []);
 
   return (
     <div>

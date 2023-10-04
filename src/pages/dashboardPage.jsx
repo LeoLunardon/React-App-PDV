@@ -13,7 +13,6 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchSalesData = async () => {
       try {
-        const token = getToken();
         
         const response = await axios.get(`${UrlServer}/sales-history`);
         const data = await response.json();

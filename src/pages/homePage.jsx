@@ -5,10 +5,8 @@ import getToken from "../Services/tokenService";
 import { useEffect } from "react";
 
 const HomePage = () => {
-  useEffect(() => {
-    const token = getToken();
-    // Use o token conforme necessário (por exemplo, fazer uma requisição usando o token)
-  }, []);
+
+  
   return (
     <div className="flex">
       <div className="">
