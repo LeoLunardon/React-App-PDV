@@ -4,6 +4,7 @@ import SideBar from "../components/SideBar/SideBar";
 import BoxItems from "../components/Dashboard/BoxItems";
 import UrlServer from "../Services/UrlServer";
 import getToken from "../Services/tokenService";
+import axios from "axios";
 
 
 const DashboardPage = () => {
@@ -14,7 +15,7 @@ const DashboardPage = () => {
       try {
         const token = getToken();
         
-        const response = await fetch(`${UrlServer}/sales-history`);
+        const response = await axios.get(`${UrlServer}/sales-history`);
         const data = await response.json();
 
         const productSales = {};
