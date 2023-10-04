@@ -5,11 +5,13 @@ import "./index.css";
 
 //Configurando router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createRoot } from "react-dom/client";
 import HomePage from "./pages/homePage";
 import ProductsPage from "./pages/productsPage";
 import SalePage from "./pages/salePage";
 import LastSales from "./pages/lastSales";
 import DashboardPage from "./pages/dashboardPage";
+
 
 
 
@@ -37,7 +39,8 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const root = createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
     <RouterProvider router={router}> </RouterProvider>
   </React.StrictMode>
