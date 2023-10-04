@@ -43,7 +43,7 @@ const NavigationHome = () => {
               </svg>
             </li>
           </a>
-          <a href="/">
+          <a href="/Sale">
             <li className="text-white md:w-80 md:pt-5 w-96 bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-xl text-center pt-8 h-36">
               Detalhe de vendas
               <svg
@@ -62,9 +62,9 @@ const NavigationHome = () => {
               </svg>
             </li>
           </a>
-          <a href="/">
+          <a href="/dashboard">
             <li className="text-white md:w-80 md:pt-5 w-96 bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-xl text-center pt-8 h-36">
-              Relatório de vendas
+              Dahboard de vendas
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

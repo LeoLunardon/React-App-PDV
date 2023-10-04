@@ -65,7 +65,7 @@ const List = () => {
     );
     if (confirmDelete) {
       axios
-        .delete(`/product/${id}`)
+        .delete(`${UrlServer}/product/${id}`)
         .then((response) => {
           setProducts(products.filter((product) => product._id !== id));
         })

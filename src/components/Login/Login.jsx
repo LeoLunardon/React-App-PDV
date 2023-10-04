@@ -22,7 +22,7 @@ const LoginForm = () => {
         return alert("Credenciais inválidas");
       } else {
         localStorage.setItem("token", data.token);
-        window.location = "/";
+        window.location = "/home";
       }
     } catch (error) {
       console.error("Erro ao fazer login:", error);

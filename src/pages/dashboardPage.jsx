@@ -3,6 +3,7 @@ import Chart from "react-apexcharts";
 import SideBar from "../components/SideBar/SideBar";
 import BoxItems from "../components/Dashboard/BoxItems";
 import UrlServer from "../Services/UrlServer";
+import getToken from "../Services/tokenService";
 
 
 const DashboardPage = () => {
@@ -11,6 +12,8 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchSalesData = async () => {
       try {
+        const token = getToken();
+        
         const response = await fetch(`${UrlServer}/sales-history`);
         const data = await response.json();
 

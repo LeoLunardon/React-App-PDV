@@ -1,8 +1,13 @@
 import React from "react";
 import SideBar from "../components/SideBar/SideBar";
 import Sale from "../components/Sale/Sale";
+import getToken from "../Services/tokenService";
+import { useEffect } from "react";
 
 const SalePage = () => {
+  useEffect(() => {
+    const token = getToken();
+  });
   return (
     <div className="flex">
       <SideBar />
