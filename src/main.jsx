@@ -7,6 +7,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import HomePage from "./pages/homePage";
+import LoginPage from "./pages/loginPage";
 import ProductsPage from "./pages/productsPage";
 import SalePage from "./pages/salePage";
 import LastSales from "./pages/lastSales";
@@ -19,6 +20,10 @@ import DashboardPage from "./pages/dashboardPage";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <LoginPage />,
+  },
+  {
+    path: "/home",
     element: <HomePage />,
   },
   {
