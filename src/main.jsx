@@ -14,7 +14,7 @@ import DashboardPage from "./pages/dashboardPage.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/login",
+    path: "/",
     element: <LoginPage />,
   },
   {
