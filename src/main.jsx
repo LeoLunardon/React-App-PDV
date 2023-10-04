@@ -12,7 +12,7 @@ import LastSales from "./pages/lastSales";
 import DashboardPage from "./pages/dashboardPage";
 
 
-import { DashboardPage } from "./pages/dashboardPage";
+
 
 const router = createBrowserRouter([
   {
