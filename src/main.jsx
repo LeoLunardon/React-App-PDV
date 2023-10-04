@@ -14,23 +14,23 @@ import DashboardPage from "./pages/dashboardPage.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/home",
-    element: <HomePage />,
-  },
-  {
     path: "/",
     element: <LoginPage />,
   },
   {
-    path: "/Products",
+    path: "/home",
+    element: <HomePage />,
+  },
+  {
+    path: "/products",
     element: <ProductsPage />,
   },
   {
-    path: "/Sale",
+    path: "/sale",
     element: <SalePage />,
   },
   {
-    path: "/Sales-history",
+    path: "/sales-history",
     element: <LastSales />,
   },
   {
