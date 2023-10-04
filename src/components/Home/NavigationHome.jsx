@@ -6,7 +6,7 @@ const NavigationHome = () => {
     <div className="my-60">
       <nav>
         <ul className="flex max-w-4xl flex-wrap  gap-5 mx-auto items-center justify-center">
-          <Link href="/products">
+          <Link to="/products">
             <li className="text-white md:w-80 md:pt-5 w-96 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-center pt-7 h-36">
               Cadastro de Produtos
               <svg
@@ -25,7 +25,7 @@ const NavigationHome = () => {
               </svg>
             </li>
           </Link>
-          <Link href="/sale">
+          <Link to="/sale">
             <li className="text-white md:w-80 md:pt-5 w-96 bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-xl text-center pt-8 h-36">
               Realizar Vendas
               <svg
@@ -44,7 +44,7 @@ const NavigationHome = () => {
               </svg>
             </li>
           </Link>
-          <Link href="/sales-history">
+          <Link to="/sales-history">
             <li className="text-white md:w-80 md:pt-5 w-96 bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-xl text-center pt-8 h-36">
               Detalhe de vendas
               <svg
@@ -63,7 +63,7 @@ const NavigationHome = () => {
               </svg>
             </li>
           </Link>
-          <Link href="/dashboard">
+          <Link to="/dashboard">
             <li className="text-white md:w-80 md:pt-5 w-96 bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-xl text-center pt-8 h-36">
               Dahboard de vendas
               <svg
