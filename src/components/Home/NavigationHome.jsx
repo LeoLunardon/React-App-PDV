@@ -1,12 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavigationHome = () => {
+  const location = useLocation();
+  const urls = {
+    products: "/products",
+    sale: "/sale",
+    salesHistory: "/sales-history",
+    dashboard: "/dashboard",
+  };
+
   return (
     <div className="my-60">
       <nav>
-        <ul className="flex max-w-4xl flex-wrap  gap-5 mx-auto items-center justify-center">
-          <Link to="/products">
+        <ul className="flex max-w-4xl flex-wrap gap-5 mx-auto items-center justify-center">
+          <Link to={urls.products}>
             <li className="text-white md:w-80 md:pt-5 w-96 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-center pt-7 h-36">
               Cadastro de Produtos
               <svg
@@ -25,7 +33,7 @@ const NavigationHome = () => {
               </svg>
             </li>
           </Link>
-          <Link to="/sale">
+          <Link to={urls.sale}>
             <li className="text-white md:w-80 md:pt-5 w-96 bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-xl text-center pt-8 h-36">
               Realizar Vendas
               <svg
@@ -44,7 +52,7 @@ const NavigationHome = () => {
               </svg>
             </li>
           </Link>
-          <Link to="/sales-history">
+          <Link to={urls.salesHistory}>
             <li className="text-white md:w-80 md:pt-5 w-96 bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-xl text-center pt-8 h-36">
               Detalhe de vendas
               <svg
@@ -63,9 +71,9 @@ const NavigationHome = () => {
               </svg>
             </li>
           </Link>
-          <Link to="/dashboard">
-            <li className="text-white md:w-80 md:pt-5 w-96 bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-xl text-center pt-8 h-36">
-              Dahboard de vendas
+          <li className="text-white md:w-80 md:pt-5 w-96 bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-xl text-center pt-8 h-36">
+            <Link to={urls.dashboard}>
+              Dashboard de vendas
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -80,8 +88,8 @@ const NavigationHome = () => {
                   d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
                 />
               </svg>
-            </li>
-          </Link>
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
