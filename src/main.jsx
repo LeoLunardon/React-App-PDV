@@ -17,23 +17,23 @@ import { DashboardPage } from "./pages/dashboardPage";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: HomePage,
+    element: <HomePage />,
   },
   {
     path: "/products",
-    element: ProductsPage,
+    element: <ProductsPage />,
   },
   {
     path: "/sale",
-    element: SalePage,
+    element: <SalePage />,
   },
   {
     path: "/sales-history",
-    element: LastSales,
+    element: <LastSales />,
   },
   {
     path: "/dashboard",
-    element: DashboardPage,
+    element: <DashboardPage />,
   },
 ]);
 
