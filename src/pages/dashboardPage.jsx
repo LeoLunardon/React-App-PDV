@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
+import getToken  from "../Services/tokenService";
 import SideBar from "../components/SideBar/SideBar";
 import BoxItems from "../components/Dashboard/BoxItems";
 import UrlServer from "../Services/UrlServer";
