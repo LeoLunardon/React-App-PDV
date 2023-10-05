@@ -21,10 +21,12 @@ const SaleTable = () => {
   };
 
   const handleFilter = () => {
-    const formattedSearchDate = new Date(searchDate).toISOString().split('T')[0];
+    const formattedSearchDate = new Date(searchDate)
+      .toISOString()
+      .split("T")[0];
 
     const filteredSales = originalSales.filter((sale) => {
-      const formattedSaleDate = new Date(sale.date).toISOString().split('T')[0];
+      const formattedSaleDate = new Date(sale.date).toISOString().split("T")[0];
       return formattedSaleDate === formattedSearchDate;
     });
 
@@ -47,7 +49,7 @@ const SaleTable = () => {
   }, []);
 
   return (
-    <div className="max-h-96 overflow-y-auto">
+    <div>
       <div className="flex items-center">
         <input
           type="date"
@@ -62,39 +64,47 @@ const SaleTable = () => {
           Buscar por Data
         </button>
       </div>
-      <table className="min-w-full">
-        <thead>
-          <tr className="text-left">
-            {/* Defina suas colunas de cabeçalho aqui */}
-            <th>ID da Venda</th>
-            <th>Valor Total</th>
-            <th>Quantidade de Itens</th>
-            <th>Data</th>
-            <th>Detalhes</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sales
-            .slice()
-            .reverse()
-            .map((sale, index) => (
-              <tr key={sale._id} className={`text-left ${index % 2 === 0 ? "bg-gray-300" : "bg-gray-100"}`}>
-                <td className="p-2">#{sale.saleId}</td>
-                <td className="p-2">R${sale.totalSalePrice}</td>
-                <td className="p-2">{sale.totalQuantity}</td>
-                <td className="p-2">{new Date(sale.date).toLocaleDateString()}</td>
-                <td className="p-2">
-                  <button
-                    className="text-red-700"
-                    onClick={() => handleOpenModal(sale)}
-                  >
-                    Visualizar
-                  </button>
-                </td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
+      <div className="mt-5 max-h-96 overflow-y-auto">
+        <table className="min-w-full">
+          <thead className="sticky top-0 bg-white">
+            <tr className="text-left">
+              <th>ID da Venda</th>
+              <th>Valor Total</th>
+              <th>Quantidade de Itens</th>
+              <th>Data</th>
+              <th>Detalhes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sales
+              .slice()
+              .reverse()
+              .map((sale, index) => (
+                <tr
+                  key={sale._id}
+                  className={`text-left  font-semibold ${
+                    index % 2 === 0 ? "bg-gray-300" : "bg-gray-100"
+                  }`}
+                >
+                  <td className="p-2">#{sale.saleId}</td>
+                  <td className="p-2">R${sale.totalSalePrice}</td>
+                  <td className="p-2">{sale.totalQuantity}</td>
+                  <td className="p-2">
+                    {new Date(sale.date).toLocaleDateString()}
+                  </td>
+                  <td className="p-2">
+                    <button
+                      className="text-red-700"
+                      onClick={() => handleOpenModal(sale)}
+                    >
+                      Visualizar
+                    </button>
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
 
       {modalOpen && selectedSale && (
         <SaleDetailModal
