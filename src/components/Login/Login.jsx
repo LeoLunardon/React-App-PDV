@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UrlServer from "../../Services/UrlServer";
+import Notification, { notify } from "../Notification/Notification";
 
 import axios from "axios";
 
@@ -22,15 +23,21 @@ const LoginForm = () => {
         return alert("Credenciais inválidas");
       } else {
         localStorage.setItem("token", data.token);
-        window.location = "/home";
+        await notify("Login efetuado com sucesso! Redirecionando...", "success");
+
+        //Atrasar o rediecionamento em 1,5 segundos
+        setTimeout(() => {
+          window.location = "/home";
+        }, 1500);
       }
     } catch (error) {
-      console.error("Erro ao fazer login:", error);
+      notify("Erro ao fazer login, verifique suas credenciais!", "error");
     }
   };
 
   return (
     <div>
+      <Notification />
       <section class="bg-gray-50 dark:bg-gray-900">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -108,7 +115,8 @@ const LoginForm = () => {
                 <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                   Ainda não tem uma conta?
                   <a
-                    href="#"
+                    target={"_blank"} rel="noreferrer noopener"
+                    href="https://api.whatsapp.com/send/?phone=5541997312005&text=Ol%C3%A1%2C+Gostaria+de+uma+conta+para+testat+o+sistema...&type=phone_number&app_absent=0"
                     class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
                     {" "}

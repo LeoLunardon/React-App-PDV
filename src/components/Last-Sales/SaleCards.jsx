@@ -7,8 +7,7 @@ import UrlServer from "../../Services/UrlServer";
 const SaleCards = () => {
   const [sales, setSales] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedSale, setSelectedSale] = useState(null); // Corrected variable name
-
+  const [selectedSale, setSelectedSale] = useState(null); 
   const handleOpenModal = (sale) => {
     setSelectedSale(sale);
     setModalOpen(true);
@@ -36,8 +35,7 @@ const SaleCards = () => {
   }, []);
 
   return (
-    <div className="ml-80 mt-10 ">
-      <h1 className=" ml-5 text-3xl font-medium">Ultimas Vendas</h1>
+    <div>
       <div className="flex container-sale max-w-4xl container-cards overflow-y-auto  mt-10 gap-x-4 gap-y-3 flex-wrap">
         {sales
           .slice()
