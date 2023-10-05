@@ -5,7 +5,9 @@ import getToken from "../Services/tokenService";
 import { useEffect } from "react";
 
 const HomePage = () => {
-
+  useEffect(() => {
+    const token = getToken();
+  })
   
   return (
     <div className="flex">
