@@ -68,7 +68,9 @@
 .background {
   position: fixed;
   width: 100%;
+  margin: 10px;
   height: 100vh;
+  
 }
 
 

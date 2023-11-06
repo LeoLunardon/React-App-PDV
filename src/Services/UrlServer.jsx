@@ -1,3 +1,3 @@
-const UrlServer = "https://api-pdv-distribuidora.onrender.com";
+const UrlServer = "https://localhost:3000";
 
 export default UrlServer;

@@ -8,7 +8,7 @@ const ProductSearch = ({
 }) => {
   return (
     <div className="relative" style={{ zIndex: 1 }}>
-      <div className="relative">
+      <div className="relative ">
         <input
           type="text"
           value={searchText}
