@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UrlServer from "../../Services/UrlServer";
 import SaleDetailModal from "./SaleDetailModal";
+import * as XLSX from "xlsx";
+import { format } from "date-fns";
 
 const SaleTable = () => {
   const [originalSales, setOriginalSales] = useState([]);
@@ -9,6 +11,32 @@ const SaleTable = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedSale, setSelectedSale] = useState(null);
   const [searchDate, setSearchDate] = useState("");
+
+  const formatDataForExcel = (data) => {
+    const formattedData = data.map((sale) => ({
+      "ID da Venda": sale.saleId,
+      "Valor Total (R$)": sale.totalSalePrice,
+      "Quantidade de Itens": sale.totalQuantity,
+      Data: format(new Date(sale.date), "dd/MM/yyyy HH:mm"),
+    }));
+
+    const worksheet = XLSX.utils.json_to_sheet(formattedData, {
+      header: [
+        "ID da Venda",
+        "Valor Total (R$)",
+        "Quantidade de Itens",
+        "Data",
+      ],
+    });
+
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Vendas");
+
+    const excelBlob = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
+    return new Blob([excelBlob], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    });
+  };
 
   const handleOpenModal = (sale) => {
     setSelectedSale(sale);
@@ -63,6 +91,13 @@ const SaleTable = () => {
         >
           Buscar por Data
         </button>
+        <a
+          href={URL.createObjectURL(formatDataForExcel(sales))}
+          download={`sales_${new Date().toLocaleDateString()}.xlsx`}
+          className="bg-green-500 mx-2 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Download Tabela
+        </a>
       </div>
       <div className="mt-5 max-h-96 overflow-y-auto">
         <table className="min-w-full">
