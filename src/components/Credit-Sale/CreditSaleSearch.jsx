@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Style.css";
 import Notification, { notify } from "../Notification/Notification";
-import CreditConfirmationModal from "../Credit-sale/CreditConfirmationModal";
+import CreditConfirmationModal from "./CreditConfirmationModal";
 import CustomersRegisterModal from "./CustomersRegisterModal";
 import ProductSearch from "../Sale/ProdutoSearch";
 import SelectedProductsList from "../Sale/SelectedProductsList";
@@ -213,14 +213,12 @@ const CreditSaleSearch = () => {
           calculateTotalPrice={calculateTotalPrice}
           handleOpenCustomerModal={handleOpenCustomerModal}
           selectedCustomer={selectedCustomer}
-          setSelectedCustomer={setSelectedCustomer} 
+          setSelectedCustomer={setSelectedCustomer}
         />
       </div>
       <CustomersRegisterModal
         modalOpen={customerModalOpen}
         handleCloseModal={() => setCustomerModalOpen(false)}
-        
-        
       />
     </div>
   );
