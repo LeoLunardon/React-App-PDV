@@ -7,7 +7,7 @@ import UrlServer from "../../Services/UrlServer";
 const SaleCards = () => {
   const [sales, setSales] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedSale, setSelectedSale] = useState(null); 
+  const [selectedSale, setSelectedSale] = useState(null);
   const handleOpenModal = (sale) => {
     setSelectedSale(sale);
     setModalOpen(true);

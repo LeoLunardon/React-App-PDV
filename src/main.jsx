@@ -12,10 +12,8 @@ import ProductsPage from "./pages/productsPage";
 import SalePage from "./pages/salePage";
 import LastSales from "./pages/lastSales";
 import DashboardPage from "./pages/dashboardPage";
-
-
-
-
+import CreditSalePage from "./pages/CreditSalePage";
+import CreditSaleHistoryPage from "./pages/CreditSaleHistoryPage";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +39,14 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <DashboardPage />,
+  },
+  {
+    path: "/credit-sale",
+    element: <CreditSalePage />,
+  },
+  {
+    path: "/credit-sale/history",
+    element: <CreditSaleHistoryPage />,
   },
 ]);
 

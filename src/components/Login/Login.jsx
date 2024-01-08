@@ -25,9 +25,9 @@ const LoginForm = () => {
         localStorage.setItem("token", data.token);
         await notify("Login efetuado com sucesso! Redirecionando...", "success");
 
-        //Atrasar o rediecionamento em 1,5 segundos
+        
         setTimeout(() => {
-          window.location = "/home";
+          window.location = "/dashboard";
         }, 1500);
       }
     } catch (error) {

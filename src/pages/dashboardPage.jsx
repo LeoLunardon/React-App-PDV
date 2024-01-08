@@ -62,11 +62,11 @@ const DashboardPage = () => {
 
   return (
     <div>
+      <SideBar />
       <div>
-        <SideBar />
       </div>
-      <div className="ml-80 font-medium text-3xl mt-10">
-        <h1>Dashboard de vendas</h1>
+      <div className="ml-80 font-medium text-3xl ">
+        <h1 className="inline-block mt-10">Dashboard de vendas</h1>
       </div>
       <div className="mt-10 w-full">
         <BoxItems />

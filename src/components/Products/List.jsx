@@ -5,7 +5,6 @@ import QuantityEdit from "./QuantityEdit";
 import Notification, { notify } from "../Notification/Notification";
 import Register from "./Register";
 import * as XLSX from "xlsx";
-import { format } from "date-fns";
 import UrlServer from "../../Services/UrlServer";
 
 const List = () => {
